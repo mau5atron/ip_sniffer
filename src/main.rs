@@ -60,7 +60,7 @@ fn scan(tx: Sender<u16>, start_port: u16, addr: IpAddr, num_threads: u16) {
 	loop {
 		match TcpStream::connect((addr, port)){
 			Ok(_) => {
-				print!("*port_notification_open*");
+				print!(".");
 				// sends output out as shared data 
 				io::stdout().flush().unwrap();
 				tx.send(port).unwrap();
